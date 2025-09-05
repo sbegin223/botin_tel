@@ -18,4 +18,3 @@ class SessionsController < ApplicationController
     redirect_to login_path, notice: "Logged out!"
   end
 end
-

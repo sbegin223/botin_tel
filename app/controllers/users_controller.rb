@@ -73,13 +73,11 @@ class UsersController < ApplicationController
         :email,
         :password,
         :password_confirmation,
-        phones_attributes: [:id, :number, :kind, :_destroy],
+        phones_attributes: [ :id, :number, :kind, :_destroy ],
         role_ids: []
       ).tap do |whitelisted|
-
         whitelisted.delete(:password) if whitelisted[:password].blank?
         whitelisted.delete(:password_confirmation) if whitelisted[:password_confirmation].blank?
       end
     end
-    
 end
