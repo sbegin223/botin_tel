@@ -82,3 +82,14 @@ en:
     attributes:
       name: "Name"
       email: "Email"
+  phones:
+    attributes:
+      name: "Name"
+      number: "Number"
+      kind: "Kind"
+    index:
+      title: "Phones"
+      heading: "Phones"
+      show: "Show"
+      new: "New Phone"
+    

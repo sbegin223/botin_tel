@@ -1,10 +1,10 @@
-<% content_for :title, "Phones" %>
+<% content_for :title, t("phones.index.title") %>
 
 <% if notice %>
   <p class="mb-4 text-green-600 font-medium"><%= notice %></p>
 <% end %>
 
-<h1 class="text-2xl font-bold text-gray-900 mb-6">Phones</h1>
+<h1 class="text-2xl font-bold text-gray-900 mb-6"><%= t("phones.index.heading") %></h1>
 
 <div id="phones" class="space-y-4">
   <% @phones.each do |phone| %>
@@ -14,7 +14,7 @@
       </div>
       <div>
         <% if can? :read, phone %>
-          <%= link_to "Show", phone, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+          <%= link_to t("phones.index.show"), phone, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
         <% end %>
       </div>
     </div>
@@ -23,7 +23,7 @@
 
 <div class="mt-6 flex space-x-4">
   <% if can? :create, Phone %>
-    <%= link_to "New Phone", new_phone_path, 
+    <%= link_to t("phones.index.new"), new_phone_path, 
           class: "h-8 px-3 flex items-center bg-indigo-600 text-white rounded-md hover:bg-indigo-700 text-sm" %>
   <% end %>
 </div>

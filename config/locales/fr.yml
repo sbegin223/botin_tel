@@ -53,3 +53,13 @@ fr:
     attributes:
       name: "Nom"
       email: "Courriel"
+  phones:
+    attributes:
+      name: "Nom"
+      number: "Numéro"
+      kind: "Type"
+    index:
+      title: "Téléphones"
+      heading: "Téléphones"
+      show: "Voir"
+      new: "Nouveau Téléphone"
