@@ -68,10 +68,18 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.expect(user: [ :name, :email ])
       params.require(:user).permit(
-        :name, :email, :password, :password_confirmation,
-        phones_attributes: [:id, :number, :kind, :_destroy]
-      )
+        :name,
+        :email,
+        :password,
+        :password_confirmation,
+        phones_attributes: [:id, :number, :kind, :_destroy],
+        role_ids: []
+      ).tap do |whitelisted|
+
+        whitelisted.delete(:password) if whitelisted[:password].blank?
+        whitelisted.delete(:password_confirmation) if whitelisted[:password_confirmation].blank?
+      end
     end
+    
 end
