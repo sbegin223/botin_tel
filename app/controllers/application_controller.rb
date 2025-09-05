@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  before_action :set_locale
+  
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
 
@@ -14,5 +16,15 @@ class ApplicationController < ActionController::Base
 
   def require_login
     redirect_to login_path, alert: "You must log in to access this page" unless logged_in?
+  end
+
+  private
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options
+    { locale: I18n.locale }
   end
 end

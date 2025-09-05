@@ -1,10 +1,10 @@
-<% content_for :title, "Users" %>
+<% content_for :title, t("users.index.title") %>
 
 <% if notice %>
   <p class="mb-4 text-green-600 font-medium"><%= notice %></p>
 <% end %>
 
-<h1 class="text-2xl font-bold text-gray-900 mb-6">Users</h1>
+<h1 class="text-2xl font-bold text-gray-900 mb-6"><%= t("users.index.heading") %></h1>
 
 <div id="users" class="space-y-4">
   <% @users.each do |user| %>
@@ -14,7 +14,7 @@
       </div>
       <div>
         <% if can? :read, user %>
-          <%= link_to "Show", user, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+          <%= link_to t("users.index.show"), user, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
         <% end %>
       </div>
     </div>
@@ -23,7 +23,7 @@
 
 <div class="mt-6 flex space-x-4">
   <% if can? :create, User %>
-    <%= link_to "New User", new_user_path, 
+    <%= link_to t("users.index.new"), new_user_path, 
           class: "px-4 py-2 h-10 bg-indigo-600 text-white rounded-md hover:bg-indigo-700" %>
   <% end %>
 </div>

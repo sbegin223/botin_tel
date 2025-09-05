@@ -28,4 +28,57 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  login:
+    title: "Login"
+    header: "Login"
+    email: "Email"
+    password: "Password"
+    submit: "Login"
+    alert: "Invalid email or password"
+  header:
+    brand: "Botin_Tel"
+    users: "Users"
+    phones: "Phones"
+    employees: "Employees"
+    departments: "Departments"
+    roles: "Roles"
+    login: "Login"
+    logout: "Logout"
+  users:
+    form:
+      errors:
+        title: "%{count} errors prohibited this user from being saved:"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      phone_numbers: "Phone Numbers"
+      phone_number: "Phone Number"
+      phone_type: "Phone Type"
+      phone_kinds:
+        mobile: "Mobile"
+        work: "Work"
+        home: "Home"
+      roles: "Roles"
+      save: "Save User"
+    edit:
+      title: "Editing user"
+      heading: "Editing user"
+      show: "Show this user"
+      back: "Back to users"
+    index:
+      title: "Users"
+      heading: "Users"
+      show: "Show"
+      new: "New User"
+    new:
+      title: "New User"
+      heading: "New User"
+      back: "Back to Users"
+    show:
+      edit: "Edit User"
+      back: "Back to Users"
+      destroy: "Destroy User"
+    attributes:
+      name: "Name"
+      email: "Email"

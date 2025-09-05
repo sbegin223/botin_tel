@@ -1,0 +1,55 @@
+fr:
+  login:
+    title: "Connexion"
+    header: "Connexion"
+    email: "Courriel"
+    password: "Mot de passe"
+    submit: "Connexion"
+    alert: "Courriel ou mot de passe invalide"
+  header:
+    brand: "Botin_Tel"
+    users: "Utilisateurs"
+    phones: "Téléphones"
+    employees: "Employés"
+    departments: "Départements"
+    roles: "Rôles"
+    login: "Connexion"
+    logout: "Déconnexion"
+  users:
+    form:
+      errors:
+        title: "%{count} erreurs ont empêché cet utilisateur d’être enregistré :"
+      name: "Nom"
+      email: "Courriel"
+      password: "Mot de passe"
+      password_confirmation: "Confirmation du mot de passe"
+      phone_numbers: "Numéros de téléphone"
+      phone_number: "Numéro de téléphone"
+      phone_type: "Type de téléphone"
+      phone_kinds:
+        mobile: "Portable"
+        work: "Travail"
+        home: "Maison"
+      roles: "Rôles"
+      save: "Enregistrer l’utilisateur"
+    edit:
+      title: "Modifier l’utilisateur"
+      heading: "Modifier l’utilisateur"
+      show: "Voir cet utilisateur"
+      back: "Retour à la liste des utilisateurs"
+    index:
+      title: "Utilisateurs"
+      heading: "Utilisateurs"
+      show: "Voir"
+      new: "Nouvel utilisateur"
+    new:
+      title: "Nouvel utilisateur"
+      heading: "Nouvel utilisateur"
+      back: "Retour à la liste des utilisateurs"
+    show:
+      edit: "Modifier l'utilisateur"
+      back: "Retour à la liste des utilisateurs"
+      destroy: "Supprimer l'utilisateur"
+    attributes:
+      name: "Nom"
+      email: "Courriel"
