@@ -13,14 +13,18 @@
         <%= render employee %>
       </div>
       <div>
-        <%= link_to "Show", employee, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+        <% if can? :read, employee %>
+          <%= link_to "Show", employee, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+        <% end %>
       </div>
     </div>
   <% end %>
 </div>
 
 <div class="mt-6 flex space-x-4">
-  <%= link_to "New Employee", new_employee_path, 
-        class: "h-8 px-3 flex items-center bg-indigo-600 text-white rounded-md hover:bg-indigo-700 text-sm" %>
+  <% if can? :create, Employee %>
+    <%= link_to "New Employee", new_employee_path, 
+          class: "h-8 px-3 flex items-center bg-indigo-600 text-white rounded-md hover:bg-indigo-700 text-sm" %>
+  <% end %>
 </div>
 

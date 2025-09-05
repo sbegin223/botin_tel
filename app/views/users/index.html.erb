@@ -13,13 +13,17 @@
         <%= render user %>
       </div>
       <div>
-        <%= link_to "Show", user, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+        <% if can? :read, user %>
+          <%= link_to "Show", user, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+        <% end %>
       </div>
     </div>
   <% end %>
 </div>
 
 <div class="mt-6 flex space-x-4">
-  <%= link_to "New User", new_user_path, 
-        class: "px-4 py-2 h-10 bg-indigo-600 text-white rounded-md hover:bg-indigo-700" %>
+  <% if can? :create, User %>
+    <%= link_to "New User", new_user_path, 
+          class: "px-4 py-2 h-10 bg-indigo-600 text-white rounded-md hover:bg-indigo-700" %>
+  <% end %>
 </div>
