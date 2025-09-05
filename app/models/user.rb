@@ -8,4 +8,8 @@ class User < ApplicationRecord
 
     validates :email, presence: true, uniqueness: true
     validates :password, presence: true, on: :create
+
+    def has_role?(role_name)
+        roles.exists?(name: role_name)
+    end
 end

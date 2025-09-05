@@ -13,13 +13,17 @@
         <%= render department %>
       </div>
       <div>
-        <%= link_to "Show", department, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+        <% if can? :read, department %>
+          <%= link_to "Show", department, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+        <% end %>
       </div>
     </div>
   <% end %>
 </div>
 
 <div class="mt-6 flex space-x-4">
-  <%= link_to "New Department", new_department_path, 
-        class: "h-8 px-3 flex items-center bg-indigo-600 text-white rounded-md hover:bg-indigo-700 text-sm" %>
+  <% if can? :create, Department %>
+    <%= link_to "New Department", new_department_path, 
+          class: "h-8 px-3 flex items-center bg-indigo-600 text-white rounded-md hover:bg-indigo-700 text-sm" %>
+  <% end %>
 </div>

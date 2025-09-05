@@ -1,5 +1,6 @@
 class RolesController < ApplicationController
   before_action :set_role, only: %i[ show edit update destroy ]
+  before_action :require_admin_or_redirect
 
   # GET /roles or /roles.json
   def index
@@ -67,4 +68,14 @@ class RolesController < ApplicationController
     def role_params
       params.expect(role: [ :name ])
     end
+
+  private
+
+  def require_admin_or_redirect
+    if logged_in?
+      redirect_to users_path unless current_user.has_role?("admin")
+    else
+      redirect_to root_path
+    end
+  end
 end
