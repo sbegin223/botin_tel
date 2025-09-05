@@ -1,0 +1,25 @@
+<% content_for :title, "Departments" %>
+
+<% if notice %>
+  <p class="mb-4 text-green-600 font-medium"><%= notice %></p>
+<% end %>
+
+<h1 class="text-2xl font-bold text-gray-900 mb-6">Departments</h1>
+
+<div id="departments" class="space-y-4">
+  <% @departments.each do |department| %>
+    <div class="p-4 bg-white rounded-lg shadow flex justify-between items-center">
+      <div>
+        <%= render department %>
+      </div>
+      <div>
+        <%= link_to "Show", department, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="mt-6 flex space-x-4">
+  <%= link_to "New Department", new_department_path, 
+        class: "h-8 px-3 flex items-center bg-indigo-600 text-white rounded-md hover:bg-indigo-700 text-sm" %>
+</div>

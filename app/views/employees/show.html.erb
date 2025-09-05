@@ -1,0 +1,18 @@
+<% if notice %>
+  <p class="mb-4 p-2 bg-green-100 text-green-700 rounded-lg font-medium"><%= notice %></p>
+<% end %>
+
+<div class="max-w-lg bg-white p-6 rounded-lg shadow mb-6">
+  <%= render @employee %>
+</div>
+
+<div class="flex space-x-4">
+  <%= link_to "Edit Employee", edit_employee_path(@employee), 
+        class: "h-8 px-3 flex items-center bg-indigo-600 text-white rounded-md hover:bg-indigo-700 text-sm font-medium" %>
+
+  <%= link_to "Back to Employees", employees_path, 
+        class: "h-8 px-3 flex items-center bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 text-sm" %>
+
+  <%= button_to "Destroy Employee", @employee, method: :delete, 
+        class: "h-8 px-3 flex items-center bg-red-600 text-white rounded-md hover:bg-red-700 text-sm font-medium" %>
+</div>

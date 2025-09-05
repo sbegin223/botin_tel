@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Botin Tel" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <header class="bg-indigo-600 text-white shadow">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <div class="flex space-x-4">
+            <%= link_to "Users", users_path, class: "px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-700" %>
+            <%= link_to "Phones", phones_path, class: "px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-700" %>
+            <%= link_to "Employees", employees_path, class: "px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-700" %>
+            <%= link_to "Departments", departments_path, class: "px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-700" %>  
+          </div>
+          <div class="flex items-center">
+            <span class="text-sm font-medium">BotinTel</span>
+            <% if logged_in? %>
+            <%= button_to "Logout", logout_path, method: :delete,
+              class: "px-3 py-2 rounded-md text-sm font-medium text-white bg-red-600 hover:bg-red-700" %>
+            <% else %>
+                <%= link_to "Login", login_path, class: "px-3 py-2 rounded-md text-sm font-medium text-white bg-green-600 hover:bg-green-700" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <main class="container mx-auto mt-28 px-5 flex">
+      <%= yield %>
+    </main>
+  </body>
+</html>
