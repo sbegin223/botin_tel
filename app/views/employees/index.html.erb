@@ -1,10 +1,10 @@
-<% content_for :title, "Employees" %>
+<% content_for :title, t("employees.index.title") %>
 
 <% if notice %>
   <p class="mb-4 text-green-600 font-medium"><%= notice %></p>
 <% end %>
 
-<h1 class="text-2xl font-bold text-gray-900 mb-6">Employees</h1>
+<h1 class="text-2xl font-bold text-gray-900 mb-6"><%= t("employees.index.heading") %></h1>
 
 <div id="employees" class="space-y-4">
   <% @employees.each do |employee| %>
@@ -14,7 +14,7 @@
       </div>
       <div>
         <% if can? :read, employee %>
-          <%= link_to "Show", employee, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+          <%= link_to t("employees.index.show"), employee, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
         <% end %>
       </div>
     </div>
@@ -23,7 +23,7 @@
 
 <div class="mt-6 flex space-x-4">
   <% if can? :create, Employee %>
-    <%= link_to "New Employee", new_employee_path, 
+    <%= link_to t("employees.index.new"), new_employee_path, 
           class: "h-8 px-3 flex items-center bg-indigo-600 text-white rounded-md hover:bg-indigo-700 text-sm" %>
   <% end %>
 </div>

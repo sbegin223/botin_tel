@@ -1,10 +1,10 @@
-<% content_for :title, "Departments" %>
+<% content_for :title, t("departments.index.title") %>
 
 <% if notice %>
   <p class="mb-4 text-green-600 font-medium"><%= notice %></p>
 <% end %>
 
-<h1 class="text-2xl font-bold text-gray-900 mb-6">Departments</h1>
+<h1 class="text-2xl font-bold text-gray-900 mb-6"><%= t("departments.index.heading") %></h1>
 
 <div id="departments" class="space-y-4">
   <% @departments.each do |department| %>
@@ -14,7 +14,7 @@
       </div>
       <div>
         <% if can? :read, department %>
-          <%= link_to "Show", department, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+          <%= link_to t("departments.index.show"), department, class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
         <% end %>
       </div>
     </div>
@@ -23,7 +23,7 @@
 
 <div class="mt-6 flex space-x-4">
   <% if can? :create, Department %>
-    <%= link_to "New Department", new_department_path, 
+    <%= link_to t("departments.index.new"), new_department_path, 
           class: "h-8 px-3 flex items-center bg-indigo-600 text-white rounded-md hover:bg-indigo-700 text-sm" %>
   <% end %>
 </div>

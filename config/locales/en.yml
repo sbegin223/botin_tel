@@ -92,4 +92,31 @@ en:
       heading: "Phones"
       show: "Show"
       new: "New Phone"
+  employees:
+    attributes:
+      name: "Name"
+      department: "Department"
+    index:
+      title: "Employees"
+      heading: "Employees"
+      show: "Show"
+      new: "New Employee"
+  departments:
+    attributes:
+      name: "Name"
+    index:
+      title: "Departments"
+      heading: "Departments"
+      show: "Show"
+      new: "New Department"
+  roles:
+    attributes:
+      name: "Name"
+    index:
+      title: "Roles"
+      heading: "Roles"
+      show: "Show"
+      new: "New Role"
+      edit: "Edit"
+      destroy: "Destroy"
     

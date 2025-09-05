@@ -62,4 +62,31 @@ fr:
       title: "Téléphones"
       heading: "Téléphones"
       show: "Voir"
-      new: "Nouveau Téléphone"
+      new: "Noueau Téléphone"
+  employees:
+    attributes:
+      name: "Nom"
+      department: "Département"
+    index:
+      title: "Employés"
+      heading: "Employés"
+      show: "Voir"
+      new: "Nouvel Employé"
+  departments:
+    attributes:
+      name: "Nom"
+    index:
+      title: "Départements"
+      heading: "Départements"
+      show: "Voir"
+      new: "Nouveau Département"
+  roles:
+    attributes:
+      name: "Nom"
+    index:
+      title: "Rôles"
+      heading: "Rôles"
+      show: "Voir"
+      new: "Nouveau Rôle"
+      edit: "Modifier"
+      destroy: "Supprimer"
